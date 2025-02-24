@@ -21,6 +21,7 @@ x_2+x_3=2
 $
 
 Contoh soal 2
+
 $
 \begin {array}{cc}
 x_1+x_2+x_3=3\\
@@ -30,6 +31,7 @@ x_1+2x_2=3
 $
 
 Contoh Soal 3
+
 $
 \begin {array}{cc}
 2x_1+2x_2=1\\
@@ -38,6 +40,7 @@ x_1+x_2=2
 $
 
 Contoh Soal 4 
+
 $
 \begin {array}{cc}
 x_1+x_2=5\\
@@ -49,6 +52,7 @@ $
 Soal 1
 
 Diketahui
+
 $
 \left [
 \begin{array}{ccc|c}
@@ -62,6 +66,7 @@ $
 Soal 2
 
 Diketahui
+
 $
 \left[
 \begin{array}{ccc|c}
