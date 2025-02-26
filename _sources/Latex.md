@@ -10,6 +10,7 @@ Operasi baris elementer (OBE) adalah operasi yang dilakukan pada baris suatu mat
 ### Eliminasi Gaus
 Dalam matematika, eliminasi Gauss adalah algoritma yang digunakan untuk menyelesaikan sistem persamaan linear. Algoritma ini terdiri dari serangkaian operasi yang dilakukan pada matriks koefisien dari sistem persamaan tersebut.
 
+Contoh Update
 Contoh Soal 1
 
 $
