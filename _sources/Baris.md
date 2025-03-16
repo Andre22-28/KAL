@@ -15,14 +15,17 @@ x_1 + 4x_3 = 5
 \end{array}
 $$
 
-Matriks yang sesuai:
+$$
+\textbf{Matriks Yang sesuai:}$$
 $$
 A = \begin{bmatrix} -7 & -6 & -12 \\ 5 & 5 & 7 \\ 1 & 0 & 4 \end{bmatrix}, \quad
 b = \begin{bmatrix} -33 \\ 24 \\ 5 \end{bmatrix}
 \
 $$
 
-Matriks augmented:
+$$
+\textbf{Matriks augmented: }$$
+$$
 $$
 \left[
 \begin{array}{ccc|c}
