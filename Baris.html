@@ -387,21 +387,22 @@
 <h2>Penyelesaian Sistem Persamaan Linear dengan Eliminasi Baris Elementer<a class="headerlink" href="#penyelesaian-sistem-persamaan-linear-dengan-eliminasi-baris-elementer" title="Link to this heading">#</a></h2>
 <section id="diketahui-sistem-persamaan">
 <h3>Diketahui sistem persamaan:<a class="headerlink" href="#diketahui-sistem-persamaan" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{array}
 -7x_1 - 6x_2 - 12x_3 = -33 \\
 5x_1 + 5x_2 + 7x_3 = 24 \\
 x_1 + 4x_3 = 5
 \end{array}
-\)</span></p>
-<p>Matriks yang sesuai:</p>
-<p><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Matriks yang sesuai:
+$<span class="math notranslate nohighlight">\(
 A = \begin{bmatrix} -7 &amp; -6 &amp; -12 \\ 5 &amp; 5 &amp; 7 \\ 1 &amp; 0 &amp; 4 \end{bmatrix}, \quad
 b = \begin{bmatrix} -33 \\ 24 \\ 5 \end{bmatrix}
 \
-\)</span></p>
-<p>Matriks augmented:</p>
-<p><span class="math notranslate nohighlight">\(
+\)</span>$</p>
+<p>Matriks augmented:
+$<span class="math notranslate nohighlight">\(
 \left[
 \begin{array}{ccc|c}
 -7 &amp; -6 &amp; -12 &amp; -33 \\
@@ -409,10 +410,10 @@ b = \begin{bmatrix} -33 \\ 24 \\ 5 \end{bmatrix}
 1 &amp; 0 &amp; 4 &amp; 5
 \end{array}
 \right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(
-\textbf{Langkah 1: Tukar} R_1 \leftrightarrow R_3\)</span></p>
-<p><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\textbf{Langkah 1: Tukar} R_1 \leftrightarrow R_3\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
 \left[
 \begin{array}{ccc|c}
 1 &amp; 0 &amp; 4 &amp; 5 \\
@@ -420,13 +421,16 @@ b = \begin{bmatrix} -33 \\ 24 \\ 5 \end{bmatrix}
 -7 &amp; -6 &amp; -12 &amp; -33
 \end{array}
 \right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(
-\textbf{Langkah 2: Eliminasi elemen di bawah pivot pertama}\)</span>
-<span class="math notranslate nohighlight">\(
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Langkah 2: Eliminasi elemen di bawah pivot pertama}\]</div>
+<div class="math notranslate nohighlight">
+\[
 R_2 \to R_2 - 5R_1, \quad R_3 \to R_3 + 7R_1
-\)</span>
-<span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left[
 \begin{array}{ccc|c}
 1 &amp; 0 &amp; 4 &amp; 5 \\
@@ -434,12 +438,15 @@ R_2 \to R_2 - 5R_1, \quad R_3 \to R_3 + 7R_1
 0 &amp; -6 &amp; 16 &amp; 2
 \end{array}
 \right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(\textbf{Langkah 3: Buat elemen (2,2) menjadi 1}\)</span>
-<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\textbf{Langkah 3: Buat elemen (2,2) menjadi 1}\]</div>
+<div class="math notranslate nohighlight">
+\[
 R_2 \to \frac{1}{5} R_2
-\)</span>
-<span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left[
 \begin{array}{ccc|c}
 1 &amp; 0 &amp; 4 &amp; 5 \\
@@ -447,12 +454,15 @@ R_2 \to \frac{1}{5} R_2
 0 &amp; -6 &amp; 16 &amp; 2
 \end{array}
 \right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(\textbf{Langkah 4: Eliminasi elemen di bawah (3,2)}\)</span>
-<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\textbf{Langkah 4: Eliminasi elemen di bawah (3,2)}\]</div>
+<div class="math notranslate nohighlight">
+\[
 R_3 \to R_3 + 6R_2
-\)</span>
-<span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left[
 \begin{array}{ccc|c}
 1 &amp; 0 &amp; 4 &amp; 5 \\
@@ -460,12 +470,15 @@ R_3 \to R_3 + 6R_2
 0 &amp; 0 &amp; \frac{18}{5} &amp; \frac{4}{5}
 \end{array}
 \right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(\textbf{Langkah 5: Buat elemen (3,3) menjadi 1}\)</span>
-<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\textbf{Langkah 5: Buat elemen (3,3) menjadi 1}\]</div>
+<div class="math notranslate nohighlight">
+\[
 R_3 \to \frac{5}{18} R_3
-\)</span>
-<span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left[
 \begin{array}{ccc|c}
 1 &amp; 0 &amp; 4 &amp; 5 \\
@@ -473,12 +486,15 @@ R_3 \to \frac{5}{18} R_3
 0 &amp; 0 &amp; 1 &amp; \frac{2}{9}
 \end{array}
 \right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(\textbf{Langkah 6: Eliminasi elemen di atas (3,3)}\)</span>
-<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\textbf{Langkah 6: Eliminasi elemen di atas (3,3)}\]</div>
+<div class="math notranslate nohighlight">
+\[
 R_2 \to R_2 + \frac{13}{5} R_3, \quad R_1 \to R_1 - 4R_3
-\)</span>
-<span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \left[
 \begin{array}{ccc|c}
 1 &amp; 0 &amp; 0 &amp; \frac{41}{9} \\
@@ -486,11 +502,13 @@ R_2 \to R_2 + \frac{13}{5} R_3, \quad R_1 \to R_1 - 4R_3
 0 &amp; 0 &amp; 1 &amp; \frac{2}{9}
 \end{array}
 \right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(\textbf{Hasil solusi:}\)</span>
-<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\textbf{Hasil solusi:}\]</div>
+<div class="math notranslate nohighlight">
+\[
 x_1 = \frac{41}{9}, \quad x_2 = -\frac{11}{9}, \quad x_3 = \frac{2}{9}
-\)</span></p>
+\]</div>
 </section>
 </section>
 </section>
