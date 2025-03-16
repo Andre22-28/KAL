@@ -26,7 +26,6 @@ $$
 $$
 \textbf{Matriks augmented: }$$
 $$
-$$
 \left[
 \begin{array}{ccc|c}
 -7 & -6 & -12 & -33 \\
