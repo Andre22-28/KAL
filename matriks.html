@@ -402,85 +402,102 @@
 <h3>Mencari determinan dengan konsep minor dan cofactor matriks.<a class="headerlink" href="#mencari-determinan-dengan-konsep-minor-dan-cofactor-matriks" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Contoh matriks 3x3
-Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:
-$<span class="math notranslate nohighlight">\(
+Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 A =
 \begin{bmatrix}
 1 &amp; 2 &amp; 3 \\
 4 &amp; 5 &amp; 6 \\
 7 &amp; 8 &amp; 9
 \end{bmatrix}
-\)</span>$</p></li>
-</ul>
+\end{split}\]</div>
 <p>Kita akan menghitung determinan menggunakan ekspansi kofaktor berdasarkan baris pertama:</p>
 <div class="math notranslate nohighlight">
 \[
 \det(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13}
 \]</div>
-<p>di mana <span class="math notranslate nohighlight">\(C_{ij} = (-1)^{i+j} M_{ij}\)</span> adalah kofaktor dari elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span>, dan <span class="math notranslate nohighlight">\(M_{ij}\)</span> adalah minor dari elemen tersebut.
-$<span class="math notranslate nohighlight">\(
+<p>di mana <span class="math notranslate nohighlight">\(C_{ij} = (-1)^{i+j} M_{ij}\)</span> adalah kofaktor dari elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span>, dan <span class="math notranslate nohighlight">\(M_{ij}\)</span> adalah minor dari elemen tersebut.</p>
+<div class="math notranslate nohighlight">
+\[
 \textbf{Menghitung Minor dan Kofaktor}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{11} = 1<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{11} = 1$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{11} =
 \begin{vmatrix}
 5 &amp; 6 \\
 8 &amp; 9
 \end{vmatrix}
 = (5 \times 9 - 6 \times 8) = 45 - 48 = -3
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{11} = (-1)^{1+1} M_{11} = (-1)^2 (-3) = -3
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{12} = 2<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{12} = 2$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{12} =
 \begin{vmatrix}
 4 &amp; 6 \\
 7 &amp; 9
 \end{vmatrix}
 = (4 \times 9 - 6 \times 7) = 36 - 42 = -6
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{12} = (-1)^{1+2} M_{12} = (-1)^3 (-6) = 6
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{13} = 3<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{13} = 3$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{13} =
 \begin{vmatrix}
 4 &amp; 5 \\
 7 &amp; 8
 \end{vmatrix}
 = (4 \times 8 - 5 \times 7) = 32 - 35 = -3
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{13} = (-1)^{1+3} M_{13} = (-1)^4 (-3) = -3
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \textbf{Menghitung Determinan}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \det(A) = (1 \times -3) + (2 \times 6) + (3 \times -3)
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 = -3 + 12 - 9 = 0
-\)</span><span class="math notranslate nohighlight">\(
-Jadi, determinan dari matriks \)</span>A<span class="math notranslate nohighlight">\( adalah:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Jadi, determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah:</p>
+<div class="math notranslate nohighlight">
+\[
 \det(A) = 0
-\)</span><span class="math notranslate nohighlight">\(
-Karena determinan nol, matriks ini \)</span>\textbf{singular}$ dan tidak memiliki invers.</p>
+\]</div>
+<p>Karena determinan nol, matriks ini <span class="math notranslate nohighlight">\(\textbf{singular}\)</span> dan tidak memiliki invers.</p>
 <ul class="simple">
-<li><p>Contoh matriks 4x4
-Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:
-$<span class="math notranslate nohighlight">\(
+<li><p>Contoh matriks 4x4</p></li>
+</ul>
+<p>Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 A =
 \begin{bmatrix}
 1 &amp; 2 &amp; 3 &amp; 4 \\
@@ -488,28 +505,31 @@ A =
 9 &amp; 10 &amp; 11 &amp; 12 \\
 13 &amp; 14 &amp; 15 &amp; 16
 \end{bmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Kita akan menghitung determinan menggunakan ekspansi kofaktor berdasarkan baris pertama:
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Kita akan menghitung determinan menggunakan ekspansi kofaktor berdasarkan baris pertama:</p>
+<div class="math notranslate nohighlight">
+\[
 \det(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13} + a_{14}C_{14}
-\)</span><span class="math notranslate nohighlight">\(
-di mana \)</span>C_{ij} = (-1)^{i+j} M_{ij}<span class="math notranslate nohighlight">\( adalah kofaktor dari elemen \)</span>a_{ij}<span class="math notranslate nohighlight">\(, dan \)</span>M_{ij}<span class="math notranslate nohighlight">\( adalah minor dari elemen tersebut.
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>di mana <span class="math notranslate nohighlight">\(C_{ij} = (-1)^{i+j} M_{ij}\)</span> adalah kofaktor dari elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span>, dan <span class="math notranslate nohighlight">\(M_{ij}\)</span> adalah minor dari elemen tersebut.</p>
+<div class="math notranslate nohighlight">
+\[
 \textbf{Menghitung Minor dan Kofaktor}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{11} = 1<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{11} = 1$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{11} =
 \begin{vmatrix}
 6 &amp; 7 &amp; 8 \\
 10 &amp; 11 &amp; 12 \\
 14 &amp; 15 &amp; 16
 \end{vmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Menghitung determinan minor \)</span>M_{11}$:</p></li>
-</ul>
+\end{split}\]</div>
+<p>Menghitung determinan minor <span class="math notranslate nohighlight">\(M_{11}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \det(M_{11}) =
@@ -592,36 +612,43 @@ C_{14} = (-1)^{1+4} M_{14} = 0
 \[
 \det(A) = (1 \times 0) + (2 \times 0) + (3 \times 0) + (4 \times 0) = 0
 \]</div>
-<p>Jadi, determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah:
-$<span class="math notranslate nohighlight">\(
+<p>Jadi, determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah:</p>
+<div class="math notranslate nohighlight">
+\[
 \det(A) = 0
-\)</span>$</p>
+\]</div>
 <p>Karena determinan nol, matriks ini <span class="math notranslate nohighlight">\(\textbf{singular}\)</span> dan tidak memiliki invers.</p>
 <ul class="simple">
 <li><p>Contoh matriks 5x5
-Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:
-$$
+Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 A =
 \begin{bmatrix}
-1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \
-6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \
-11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 \
-16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 \
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 \\
+16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 \\
 21 &amp; 22 &amp; 23 &amp; 24 &amp; 25
-\end{bmatrix}</p></li>
-</ul>
-<p>Kita akan menghitung determinan menggunakan ekspansi kofaktor berdasarkan baris pertama:
-$<span class="math notranslate nohighlight">\(
+\end{bmatrix}
+\end{split}\]</div>
+<p>Kita akan menghitung determinan menggunakan ekspansi kofaktor berdasarkan baris pertama:</p>
+<div class="math notranslate nohighlight">
+\[
 \det(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13} + a_{14}C_{14} + a_{15}C_{15}
-\)</span><span class="math notranslate nohighlight">\(
-di mana \)</span>C_{ij} = (-1)^{i+j} M_{ij}<span class="math notranslate nohighlight">\( adalah kofaktor dari elemen \)</span>a_{ij}<span class="math notranslate nohighlight">\(, dan \)</span>M_{ij}<span class="math notranslate nohighlight">\( adalah minor dari elemen tersebut.
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>di mana <span class="math notranslate nohighlight">\(C_{ij} = (-1)^{i+j} M_{ij}\)</span> adalah kofaktor dari elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span>, dan <span class="math notranslate nohighlight">\(M_{ij}\)</span> adalah minor dari elemen tersebut.</p>
+<div class="math notranslate nohighlight">
+\[
 \textbf{Menghitung Minor dan Kofaktor}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{11} = 1<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{11} = 1$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{11} =
 \begin{vmatrix}
 7 &amp; 8 &amp; 9 &amp; 10 \\
@@ -629,18 +656,22 @@ M_{11} =
 17 &amp; 18 &amp; 19 &amp; 20 \\
 22 &amp; 23 &amp; 24 &amp; 25
 \end{vmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-Menghitung determinan minor \)</span>M_{11}<span class="math notranslate nohighlight">\(:
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<p>Menghitung determinan minor <span class="math notranslate nohighlight">\(M_{11}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 \det(M_{11}) = 0
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{11} = (-1)^{1+1} M_{11} = 0
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{12} = 2<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{12} = 2$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{12} =
 \begin{vmatrix}
 6 &amp; 8 &amp; 9 &amp; 10 \\
@@ -648,14 +679,17 @@ M_{12} =
 16 &amp; 18 &amp; 19 &amp; 20 \\
 21 &amp; 23 &amp; 24 &amp; 25
 \end{vmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{12} = (-1)^{1+2} M_{12} = 0
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{13} = 3<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{13} = 3$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{13} =
 \begin{vmatrix}
 6 &amp; 7 &amp; 9 &amp; 10 \\
@@ -663,14 +697,17 @@ M_{13} =
 16 &amp; 17 &amp; 19 &amp; 20 \\
 21 &amp; 22 &amp; 24 &amp; 25
 \end{vmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{13} = (-1)^{1+3} M_{13} = 0
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{14} = 4<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{14} = 4$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{14} =
 \begin{vmatrix}
 6 &amp; 7 &amp; 8 &amp; 10 \\
@@ -678,14 +715,17 @@ M_{14} =
 16 &amp; 17 &amp; 18 &amp; 20 \\
 21 &amp; 22 &amp; 23 &amp; 25
 \end{vmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{14} = (-1)^{1+4} M_{14} = 0
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
-\textbf{Minor dan Kofaktor untuk \)</span>a_{15} = 5<span class="math notranslate nohighlight">\(}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\textbf{Minor dan Kofaktor untuk $a_{15} = 5$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 M_{15} =
 \begin{vmatrix}
 6 &amp; 7 &amp; 8 &amp; 9 \\
@@ -693,21 +733,25 @@ M_{15} =
 16 &amp; 17 &amp; 18 &amp; 19 \\
 21 &amp; 22 &amp; 23 &amp; 24
 \end{vmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 C_{15} = (-1)^{1+5} M_{15} = 0
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \textbf{Menghitung Determinan}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \det(A) = (1 \times 0) + (2 \times 0) + (3 \times 0) + (4 \times 0) + (5 \times 0) = 0
-\)</span><span class="math notranslate nohighlight">\(
-Jadi, determinan dari matriks \)</span>A<span class="math notranslate nohighlight">\( adalah:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Jadi, determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah:</p>
+<div class="math notranslate nohighlight">
+\[
 \det(A) = 0
-\)</span><span class="math notranslate nohighlight">\(
-Karena determinan nol, matriks ini \)</span>\textbf{singular}$ dan tidak memiliki invers.</p>
+\]</div>
+<p>Karena determinan nol, matriks ini <span class="math notranslate nohighlight">\(\textbf{singular}\)</span> dan tidak memiliki invers.</p>
 </section>
 </section>
 </section>
