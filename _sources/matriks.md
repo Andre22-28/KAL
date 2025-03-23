@@ -19,7 +19,9 @@ A =
 7 & 8 & 9
 \end{bmatrix}
 $$
+
 Kita akan menghitung determinan menggunakan ekspansi kofaktor berdasarkan baris pertama:
+
 $$
 \det(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13}
 $$
