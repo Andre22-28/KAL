@@ -1,8 +1,3 @@
----
-title: Transformasi Linier
-
----
-
 # Transformasi Linier
 ## Buktikan bahwa transformasi linier
 $$
