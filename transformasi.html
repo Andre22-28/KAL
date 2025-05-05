@@ -529,8 +529,7 @@ x
 <span class="n">titik</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
                   <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span>
                   <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span>
-                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
 
 <span class="n">koordinats</span> <span class="o">=</span> <span class="n">titik</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
@@ -541,35 +540,318 @@ x
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
-<span class="n">B_trans</span> <span class="o">=</span> <span class="n">B</span><span class="nd">@koordinats</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 
-<span class="n">x_LT2</span> <span class="o">=</span> <span class="n">B_trans</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
-<span class="n">y_LT2</span> <span class="o">=</span> <span class="n">B_trans</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="c1"># Transformasi</span>
+<span class="n">R_trans</span> <span class="o">=</span> <span class="n">R</span> <span class="o">@</span> <span class="n">koordinats</span>
+<span class="n">x_RT</span> <span class="o">=</span> <span class="n">R_trans</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">y_RT</span> <span class="o">=</span> <span class="n">R_trans</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
 
 <span class="c1"># Membuat gambar dan sumbu sumbu</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-<span class="c1"># Ploting titik titik.  x dan y are vektor asal(domain) , x_LT1 dab y_LT1 bayangan (codomain)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_LT2</span><span class="p">,</span><span class="n">y_LT2</span><span class="p">,</span><span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="c1"># Plot titik-titik asal dan hasil transformasi</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asal (Domain)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_RT</span><span class="p">,</span> <span class="n">y_RT</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bayangan (Codomain)&#39;</span><span class="p">)</span>
 
-<span class="c1"># Menghubungkan titik dengan baris</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_LT2</span><span class="p">,</span><span class="n">y_LT2</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="c1"># Hubungkan titik asal dan bayangan</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">koordinats</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_RT</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y_RT</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 
-<span class="c1"># menggambar sumbu sumbu</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="c1"># Gambar garis y = x</span>
+<span class="n">x_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="n">x_line</span><span class="p">,</span> <span class="s1">&#39;g--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Garis y = x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Gambar sumbu koordinat</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Refleksi sumbu Y = X&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Refleksi terhadap garis y = x&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/76a8d5ed11d2806a0672fc40b52ca0b5a7c54047fd69b8e1e2e5bc3ae6e65908.png" src="_images/76a8d5ed11d2806a0672fc40b52ca0b5a7c54047fd69b8e1e2e5bc3ae6e65908.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+</pre></div>
+</div>
+<img alt="_images/930fb9a338ce73c1eeace16aea00cbc7caab9981beca519e6d8824fbd0765e3a.png" src="_images/930fb9a338ce73c1eeace16aea00cbc7caab9981beca519e6d8824fbd0765e3a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>   <span class="c1"># y = x</span>
+               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># y = -x</span>
+               <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Refleksi pertama (terhadap y = x)</span>
+<span class="n">ref1</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">@</span> <span class="n">koordinats</span>
+<span class="n">x_ref1</span> <span class="o">=</span> <span class="n">ref1</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">y_ref1</span> <span class="o">=</span> <span class="n">ref1</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
+
+<span class="c1"># Refleksi kedua (terhadap y = -x)</span>
+<span class="n">ref2</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">@</span> <span class="n">ref1</span>
+<span class="n">x_ref2</span> <span class="o">=</span> <span class="n">ref2</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">y_ref2</span> <span class="o">=</span> <span class="n">ref2</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
+
+<span class="c1"># Visualisasi</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Titik asli, refleksi 1, refleksi 2</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_ref1</span><span class="p">,</span> <span class="n">y_ref1</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Refleksi y=x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_ref2</span><span class="p">,</span> <span class="n">y_ref2</span><span class="p">,</span> <span class="s1">&#39;go&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Refleksi y=-x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Garis penghubung</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">koordinats</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_ref1</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y_ref1</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x_ref1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_ref2</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="p">[</span><span class="n">y_ref1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y_ref2</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="s1">&#39;b--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Gambar garis y = x dan y = -x</span>
+<span class="n">x_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="n">x_line</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y = x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="o">-</span><span class="n">x_line</span><span class="p">,</span> <span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y = -x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Setting plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Refleksi terhadap y = x lalu y = -x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Merah : Titik awal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Biru : Cerminan&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hijau : Cerminan dari -x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f11fbfd027a55c4afe00eb036bf7bdbd62aca9cddc4b8fd0ad9eb527a39abfc7.png" src="_images/f11fbfd027a55c4afe00eb036bf7bdbd62aca9cddc4b8fd0ad9eb527a39abfc7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------------
+Merah : Titik awal
+Biru : Cerminan
+Hijau : Cerminan dari -x
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># T1 Refleksi terhadap sumbu Y</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline  
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Titik awal: (2,1)</span>
+<span class="n">titik</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">koordinats</span> <span class="o">=</span> <span class="n">titik</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>  <span class="c1"># ubah jadi kolom vektor</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Matriks refleksi terhadap sumbu Y</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Transformasi refleksi</span>
+<span class="n">B_trans</span> <span class="o">=</span> <span class="n">B</span> <span class="o">@</span> <span class="n">koordinats</span>
+<span class="n">x_LT2</span> <span class="o">=</span> <span class="n">B_trans</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">y_LT2</span> <span class="o">=</span> <span class="n">B_trans</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Membuat gambar</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Plot titik asal dan bayangan</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_LT2</span><span class="p">,</span> <span class="n">y_LT2</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bayangan&#39;</span><span class="p">)</span>
+
+<span class="c1"># Garis penghubung (opsional)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_LT2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_LT2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gambar sumbu koordinat</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Refleksi Titik (2,1) terhadap Sumbu Y&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b6c37e68d6406678e0566f31aafc01ffde837f803b3f1a9bc8af80103702333e.png" src="_images/b6c37e68d6406678e0566f31aafc01ffde837f803b3f1a9bc8af80103702333e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># T1 Refleksi terhadap sumbu X</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline  
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Titik awal: (2,1)</span>
+<span class="n">titik</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">koordinats</span> <span class="o">=</span> <span class="n">titik</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>  <span class="c1"># ubah jadi kolom vektor</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Matriks refleksi terhadap sumbu X</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Transformasi refleksi</span>
+<span class="n">B_trans</span> <span class="o">=</span> <span class="n">B</span> <span class="o">@</span> <span class="n">koordinats</span>
+<span class="n">x_LT2</span> <span class="o">=</span> <span class="n">B_trans</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">y_LT2</span> <span class="o">=</span> <span class="n">B_trans</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Membuat gambar</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Plot titik asal dan bayangan</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_LT2</span><span class="p">,</span> <span class="n">y_LT2</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bayangan&#39;</span><span class="p">)</span>
+
+<span class="c1"># Garis penghubung (opsional)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_LT2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_LT2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gambar sumbu koordinat</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Refleksi Titik (2,1) terhadap Sumbu X&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/32ecbc1aae687eaaba7596f6e62084fcfbe49f39ff87a54c73b7a675c8e329ef.png" src="_images/32ecbc1aae687eaaba7596f6e62084fcfbe49f39ff87a54c73b7a675c8e329ef.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rotasi 90 derajat</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline  
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Titik awal: (2,1)</span>
+<span class="n">titik</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">koordinats</span> <span class="o">=</span> <span class="n">titik</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>  <span class="c1"># ubah jadi kolom vektor</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Matriks rotasi 90 derajat CCW</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Transformasi rotasi</span>
+<span class="n">R_trans</span> <span class="o">=</span> <span class="n">R</span> <span class="o">@</span> <span class="n">koordinats</span>
+<span class="n">x_rot</span> <span class="o">=</span> <span class="n">R_trans</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">y_rot</span> <span class="o">=</span> <span class="n">R_trans</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Membuat gambar</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Plot titik asal dan hasil rotasi</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Asal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_rot</span><span class="p">,</span> <span class="n">y_rot</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rotasi 90°&#39;</span><span class="p">)</span>
+
+<span class="c1"># Garis penghubung (opsional)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_rot</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_rot</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gambar sumbu koordinat</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Rotasi Titik (2,1) Sebesar 90° CCW&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/234d318a9eabe8658a889f4ca3f1201b866f3dbeb80f56115cdb1a2e7902c338.png" src="_images/234d318a9eabe8658a889f4ca3f1201b866f3dbeb80f56115cdb1a2e7902c338.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#T4</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Titik awal</span>
+<span class="n">titik</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># kolom vektor</span>
+
+<span class="c1"># Matriks transformasi</span>
+<span class="n">T1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>   <span class="c1"># Refleksi sumbu X</span>
+
+<span class="n">T2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>    <span class="c1"># Refleksi sumbu Y</span>
+
+<span class="n">T3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>    <span class="c1"># Rotasi 90° CCW</span>
+
+<span class="c1"># Gabungan transformasi: T3 @ T2 @ T1</span>
+<span class="n">T_total</span> <span class="o">=</span> <span class="n">T3</span> <span class="o">@</span> <span class="n">T2</span> <span class="o">@</span> <span class="n">T1</span>
+
+<span class="c1"># Terapkan transformasi gabungan ke titik</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">T_total</span> <span class="o">@</span> <span class="n">titik</span>
+
+<span class="c1"># Ekstrak koordinat</span>
+<span class="n">x_asal</span><span class="p">,</span> <span class="n">y_asal</span> <span class="o">=</span> <span class="n">titik</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">titik</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">x_akhir</span><span class="p">,</span> <span class="n">y_akhir</span> <span class="o">=</span> <span class="n">hasil</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">hasil</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Visualisasi</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_asal</span><span class="p">,</span> <span class="n">y_asal</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Titik Asal (2,1)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_akhir</span><span class="p">,</span> <span class="n">y_akhir</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hasil T3·T2·T1&#39;</span><span class="p">)</span>
+
+<span class="c1"># Garis bantu</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x_asal</span><span class="p">,</span> <span class="n">x_akhir</span><span class="p">],</span> <span class="p">[</span><span class="n">y_asal</span><span class="p">,</span> <span class="n">y_akhir</span><span class="p">],</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gambar sumbu</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Gabungan T1 × T2 × T3 terhadap Titik (2,1)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Tampilkan hasil akhir juga di konsol</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Koordinat akhir hasil T3·T2·T1 · (2,1):&quot;</span><span class="p">,</span> <span class="n">hasil</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a73c5b0bc2ef561f4079f94491952e09dd37050acf663c0f271a745cb31b588f.png" src="_images/a73c5b0bc2ef561f4079f94491952e09dd37050acf663c0f271a745cb31b588f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Koordinat akhir hasil T3·T2·T1 · (2,1): [ 1 -2]
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
