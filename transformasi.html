@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Refleksi &#8212; Andre Doankz</title>
+    <title>Refleksi &#8212; KAL</title>
   
   
   
@@ -154,8 +154,8 @@
       
     
     
-    <img src="_static/logoa.jpg" class="logo__image only-light" alt="Andre Doankz - Home"/>
-    <script>document.write(`<img src="_static/logoa.jpg" class="logo__image only-dark" alt="Andre Doankz - Home"/>`);</script>
+    <img src="_static/logoa.jpg" class="logo__image only-light" alt="KAL - Home"/>
+    <script>document.write(`<img src="_static/logoa.jpg" class="logo__image only-dark" alt="KAL - Home"/>`);</script>
   
   
 </a></div>
@@ -526,7 +526,12 @@ x
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="n">titik</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">titik</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
 <span class="n">koordinats</span> <span class="o">=</span> <span class="n">titik</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">koordinats</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
@@ -536,7 +541,7 @@ x
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
 <span class="n">B_trans</span> <span class="o">=</span> <span class="n">B</span><span class="nd">@koordinats</span>
 
 <span class="n">x_LT2</span> <span class="o">=</span> <span class="n">B_trans</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
@@ -559,12 +564,12 @@ x
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Refleksi sumbu Y&quot;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Refleksi sumbu Y = X&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f205d8e37e08325ab7db42e15d6fb626130dfebc38d4d56246d9c01ab942a6ca.png" src="_images/f205d8e37e08325ab7db42e15d6fb626130dfebc38d4d56246d9c01ab942a6ca.png" />
+<img alt="_images/76a8d5ed11d2806a0672fc40b52ca0b5a7c54047fd69b8e1e2e5bc3ae6e65908.png" src="_images/76a8d5ed11d2806a0672fc40b52ca0b5a7c54047fd69b8e1e2e5bc3ae6e65908.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -625,7 +630,7 @@ x
 <section id="latihan">
 <h2>Latihan<a class="headerlink" href="#latihan" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Carilah matriks yang menggambarkan refleksi terhadap sumbu x. Kalikan matrik dengan 4 titik koordinat dan plot hasilnya</p></li>
+<li><p>Carilah matriks yang menggambarkan refleksi terhadap sumbu y = x. Kalikan matrik dengan 4 titik koordinat dan plot hasilnya</p></li>
 <li><p>Carilah matriks yang menggambarkan refleksi terhadap sumbu y= -x. Kalikan matrik dengan 4 titik koordinat dan plot hasilnya</p></li>
 </ol>
 </section>
@@ -1186,7 +1191,7 @@ z \\
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Andre Doankz
 </p>
 
   </div>
