@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Kalisilang';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Perkalian titik (Dot Product)" href="vektor.html" />
+    <link rel="prev" title="Perkalian titik Vekotr" href="vektor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,7 +193,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="eigen.html">Eigen value dan Eigen Vektor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vektor.html">Perkalian titik (Dot Product)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vektor.html">Perkalian titik Vekotr</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Definisi Kalisilang</a></li>
 </ul>
 
@@ -392,6 +392,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-kovaktor-i-j-k">Determinan Kovaktor I J K</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas">TUGAS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">SOAL 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">SOAL 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-3">SOAL 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SOAL 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-4">SOAL 4</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -474,6 +482,323 @@ v_1 &amp; v_3
 C_{12} = (-1)^{1+2} M_{12} = -1 \times (u_1 v_3 - u_3 v_1) = u_3 v_1 - u_1 v_3
 \]</div>
 </section>
+<section id="tugas">
+<h2>TUGAS<a class="headerlink" href="#tugas" title="Link to this heading">#</a></h2>
+<section id="soal-1">
+<h3>SOAL 1<a class="headerlink" href="#soal-1" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Tentukan luas jajaran genjang yang ditentukan oleh vektor }
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \quad \vec{v} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Peneyelesaian}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Untuk dua vektor dalam ruang 2 dimensi, luas jajaran genjang dapat dihitung dengan nilai mutlak dari determinan matriks 2x2 yang dibentuk oleh kedua vektor, atau menggunakan rumus:
+}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = |\vec{u} \times \vec{v}| = |u_1 v_2 - u_2 v_1|
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Substitusi komponen vektor:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \quad 
+\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Maka:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = |(1)(1) - (2)(2)| = |1 - 4| = |-3| = 3
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Jawaban:}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Luas jajaran genjang adalah:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{3}
+\]</div>
+</section>
+<section id="soal-2">
+<h3>SOAL 2<a class="headerlink" href="#soal-2" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Tentukan luas jajaran genjang yang ditentukan oleh vektor }
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}, \quad \vec{v} = \begin{bmatrix} 0 \\ 3 \end{bmatrix}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Peneyelesaian}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Untuk dua vektor dalam ruang 2 dimensi, luas jajaran genjang dapat dihitung dengan nilai mutlak dari determinan matriks 2x2 yang dibentuk oleh kedua vektor, atau menggunakan rumus:
+}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = |\vec{u} \times \vec{v}| = |u_1 v_2 - u_2 v_1|
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Substitusi komponen vektor:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{u} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}, \quad 
+\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 3 \end{bmatrix}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Maka:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = |(2)(3) - (0)(0)| = |6 - 0| = 6
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Jawaban:}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Luas jajaran genjang adalah:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{6}
+\]</div>
+</section>
+<section id="soal-3">
+<h3>SOAL 3<a class="headerlink" href="#soal-3" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Tentukan luas segitiga dengan titik-titik sudut: }
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+A = (0, 0, 0), \quad B = (1, 3, -1), \quad C = (2, 1, 1)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Penyelesaian}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Untuk menghitung luas segitiga yang dibentuk oleh tiga titik di ruang 3 dimensi, kita dapat menggunakan rumus:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = \frac{1}{2} \left\| \vec{AB} \times \vec{AC} \right\|
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 1: Tentukan vektor} \vec{AB}  dan  \vec{AC} 
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\vec{AB} = B - A = (1 - 0,\ 3 - 0,\ -1 - 0) = (1, 3, -1)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{AC} = C - A = (2 - 0,\ 1 - 0,\ 1 - 0) = (2, 1, 1)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 2: Hitung}  \vec{AB} \times \vec{AC}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\vec{AB} \times \vec{AC}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{AB} \times \vec{AC} = 
+\begin{vmatrix}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+1 &amp; 3 &amp; -1 \\
+2 &amp; 1 &amp; 1 \\
+\end{vmatrix}
+= \hat{i}(3 \cdot 1 - (-1) \cdot 1) - \hat{j}(1 \cdot 1 - (-1) \cdot 2) + \hat{k}(1 \cdot 1 - 3 \cdot 2)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \hat{i}(3 + 1) - \hat{j}(1 + 2) + \hat{k}(1 - 6)
+= \hat{i}(4) - \hat{j}(3) - \hat{k}(5)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 3: Hitung panjang vektor hasil cross product}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\left\| \vec{AB} \times \vec{AC} \right\| = \sqrt{4^2 + (-3)^2 + (-5)^2} = \sqrt{16 + 9 + 25} = \sqrt{50}
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 4: Hitung luas segitiga}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = \frac{1}{2} \sqrt{50} = \frac{\sqrt{50}}{2}
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Jawaban:}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Luas segitiga adalah:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\sqrt{50}}{2}}
+\]</div>
+</section>
+<section id="id1">
+<h3>SOAL 3<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Tentukan luas segitiga dengan titik-titik sudut: }
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+A = (5, 2, -1), \quad B = (3, 6, 2), \quad C = (1, 0, 4)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Penyelesaian}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Untuk menghitung luas segitiga dari tiga titik di ruang 3 dimensi, gunakan rumus:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = \frac{1}{2} \left\| \vec{AB} \times \vec{AC} \right\|
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 1: Hitung vektor} \vec{AB}  dan \vec{AC} 
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\vec{AB} = B - A = (3 - 5,\ 6 - 2,\ 2 - (-1)) = (-2,\ 4,\ 3)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{AC} = C - A = (1 - 5,\ 0 - 2,\ 4 - (-1)) = (-4,\ -2,\ 5)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 2: Hitung} \vec{AB} \times \vec{AC} 
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{AB} \times \vec{AC} = 
+\begin{vmatrix}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+-2 &amp; 4 &amp; 3 \\
+-4 &amp; -2 &amp; 5 \\
+\end{vmatrix}
+= \hat{i}(4 \cdot 5 - 3 \cdot (-2)) - \hat{j}(-2 \cdot 5 - 3 \cdot (-4)) + \hat{k}(-2 \cdot (-2) - 4 \cdot (-4))
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \hat{i}(20 + 6) - \hat{j}(-10 + 12) + \hat{k}(4 + 16)
+= \hat{i}(26) - \hat{j}(2) + \hat{k}(20)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 3: Hitung panjang vektor hasil cross product}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\left\| \vec{AB} \times \vec{AC} \right\| = \sqrt{26^2 + 2^2 + 20^2} = \sqrt{676 + 4 + 400} = \sqrt{1080}
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 4: Hitung luas segitiga}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = \frac{1}{2} \sqrt{1080}
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Jawaban}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\text{Luas segitiga adalah:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\sqrt{1080}}{2}}
+\]</div>
+</section>
+<section id="soal-4">
+<h3>SOAL 4<a class="headerlink" href="#soal-4" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+\text{Tentukan luas segitiga yang dibentuk oleh titik-titik:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+A = (5, 2, -1), \quad B = (3, 6, 2), \quad C = (1, 0, 4)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Penyelesaian}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Luas segitiga yang dibentuk oleh tiga titik dalam ruang 3 dimensi dapat dihitung menggunakan rumus:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = \frac{1}{2} \left\| \vec{AB} \times \vec{AC} \right\|
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 1: Tentukan vektor}  \vec{AB} dan \vec{AC}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\vec{AB} = B - A = (3 - 5,\ 6 - 2,\ 2 - (-1)) = (-2,\ 4,\ 3)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{AC} = C - A = (1 - 5,\ 0 - 2,\ 4 - (-1)) = (-4,\ -2,\ 5)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 2: Hitung} \vec{AB} \times \vec{AC}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{AB} \times \vec{AC} =
+\begin{vmatrix}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+-2 &amp; 4 &amp; 3 \\
+-4 &amp; -2 &amp; 5 \\
+\end{vmatrix}
+= \hat{i}(4 \cdot 5 - 3 \cdot (-2)) - \hat{j}(-2 \cdot 5 - 3 \cdot (-4)) + \hat{k}(-2 \cdot (-2) - 4 \cdot (-4))
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \hat{i}(20 + 6) - \hat{j}(-10 + 12) + \hat{k}(4 + 16) = \hat{i}(26) - \hat{j}(2) + \hat{k}(20)
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 3: Hitung panjang vektor hasil cross product}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\left\| \vec{AB} \times \vec{AC} \right\| = \sqrt{26^2 + 2^2 + 20^2} = \sqrt{676 + 4 + 400} = \sqrt{1080}
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Langkah 4: Hitung luas segitiga}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+L = \frac{1}{2} \sqrt{1080} = \frac{\sqrt{1080}}{2} \approx \frac{32.86}{2} = 16.43
+\]</div>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Jawaban}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\textbf{Luas segitiga adalah:}
+\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\sqrt{1080}}{2} \approx 16.43}
+\]</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -512,7 +837,7 @@ C_{12} = (-1)^{1+2} M_{12} = -1 \times (u_1 v_3 - u_3 v_1) = u_3 v_1 - u_1 v_3
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Perkalian titik (Dot Product)</p>
+        <p class="prev-next-title">Perkalian titik Vekotr</p>
       </div>
     </a>
 </div>
@@ -533,6 +858,14 @@ C_{12} = (-1)^{1+2} M_{12} = -1 \times (u_1 v_3 - u_3 v_1) = u_3 v_1 - u_1 v_3
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan-kovaktor-i-j-k">Determinan Kovaktor I J K</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas">TUGAS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">SOAL 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">SOAL 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-3">SOAL 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SOAL 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-4">SOAL 4</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
